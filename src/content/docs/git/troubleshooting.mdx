@@ -1,0 +1,124 @@
+---
+title: Common Problems
+description: Common Git problems and exactly how to fix them.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Don't worry, nearly everyone runs into these at some point. Here's how you can fix the most common issues with Git/Github.
+
+---
+
+## "I have merge conflicts!"
+
+A merge conflict means you've changed the same part of a file that has also changed on main since you created the branch. Git doesn't know which version to keep, so it asks you to decide.
+
+**You'll see something like this in the file:**
+
+```
+<<<<<<< HEAD
+score += 10;
+=======
+score += 15;
+>>>>>>> sam/update-score
+```
+
+**To fix it:**
+
+1. Open the conflicting file in your editor
+2. Decide which version is correct (or combine them if both changes should exist)
+3. Delete the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`)
+4. Save the file, then run:
+
+```sh
+git add .
+git commit -m "Merge main into sam/update-score"
+```
+
+<Aside type="tip">
+  If you're not sure which version to keep, don't guess. Instead, leave a comment on your PR and tag me. It's better to ask than to accidentally undo someone else's work.
+</Aside>
+
+<Aside type="note">
+  If you're using git rebase instead of git merge, you'll see the same conflict markers. Fix them the same way, then run git rebase --continue instead of committing.
+</Aside>
+
+---
+
+## "I accidentally committed to main!"
+
+Don't push (you shouldn't be able to anyway). Run this to move your work to a new branch and restore main:
+
+```sh
+git checkout -b your-name/what-you-were-doing    # move your work to a proper branch
+git checkout main
+
+# reset main back to the online version (safe to run since you haven't pushed)
+git reset --hard origin/main
+```
+
+This works even if you made several commits to main; they'll all land on the new branch. From there, commit any remaining changes and open a PR as you normally would.
+
+---
+
+## "git push is being rejected"
+
+This usually means the online version of your branch is ahead of your local copy. Try:
+
+```sh
+git pull --rebase
+git push
+```
+
+If you're pushing for the first time and it's rejected, make sure you're using the right branch name:
+
+```sh
+git push origin your-name/feature-name
+```
+
+---
+
+## "I want to undo my last commit (but keep my changes)"
+
+This un-commits your last commit while leaving your files untouched:
+
+```sh
+git reset --soft HEAD~1
+```
+
+---
+
+## "I want to throw away all my changes and start fresh"
+
+<Aside type="caution">
+  This is permanent. Make sure you actually want to discard **everything** before running this.
+</Aside>
+
+```sh
+git checkout main
+git reset --hard origin/main
+```
+
+---
+
+## "I don't know what state my repo is in"
+
+These commands help you get your bearings:
+
+```sh
+git status          # see what files have changed
+git log --oneline   # see recent commit history
+git branch          # see what branch you're on
+```
+
+---
+
+## Something else is wrong
+
+If you're stuck and none of the above tips help:
+
+1. **Don't force-push or delete anything**, that could make it worse
+2. Screenshot or copy the error message
+3. Ask a club leader, they've might've seen it before
+
+---

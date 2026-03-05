@@ -1,0 +1,108 @@
+---
+title: Git Commands
+description: The exact terminal commands to type at each stage of the contribution workflow.
+---
+
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+Here's exactly what to type in your terminal at each step of [the workflow](/guides/workflow/). You can refer back to this page any time.
+
+<Aside type="tip" title="Opening a terminal">
+  - **Windows**: Press `Win + R`, type `cmd`, press Enter. Or search for "Command Prompt".
+  - **Mac**: Press `Cmd + Space`, type `Terminal`, press Enter.
+  - **Linux**: Press `Ctrl + Alt + T` or open Terminal through your desktop environment's app launcher.
+</Aside>
+
+---
+
+## 1. Pull the Latest Changes
+
+Always do this before starting any new work:
+
+```sh
+git checkout main
+git pull
+```
+
+This switches you to the main branch and downloads any new changes.
+
+---
+
+## 2. Create Your Branch
+
+Replace `your-name/feature-name` with something descriptive:
+
+```sh
+git checkout -b your-name/feature-name
+```
+
+**Examples:**
+- `git checkout -b alex/add-walk-sound`
+- `git checkout -b sam/fix-wall-collision`
+- `git checkout -b jordan/npc-interact-revamp`
+
+---
+
+## 3. Make Your Changes
+
+Work normally; write code, add files, whatever you're working on. Git is watching, but won't do anything until you tell it to.
+
+You can check what you've changed at any time:
+
+```sh
+git status
+```
+
+---
+
+## 4. Commit Your Work
+
+When you're ready to save a checkpoint:
+
+```sh
+git add .
+git commit -m "Short description of what you changed"
+```
+
+`git add .` stages all your changed files. `git commit` saves the snapshot.
+
+<Aside type="tip" title="Committing often is good">
+  You don't have to finish everything before committing. Saving small commits as you go (e.g. "Add player walking animation", then later "Add footstep sound") makes your work easier to review and easier to undo if something goes wrong.
+</Aside>
+
+---
+
+## 5. Push to GitHub
+
+Upload your branch so it exists online:
+
+```sh
+git push origin your-name/feature-name
+```
+
+Use the same branch name you created in Step 2.
+
+---
+
+## 6. Open a Pull Request
+
+1. Go to the repository on **github.com**
+2. You'll see a yellow banner: *"your-branch had recent pushes"*. Click **Compare & pull request**
+3. Write a clear title and description
+4. Click **Create pull request**
+
+That's it! A club president will review it and either approve it or leave feedback.
+
+---
+
+## 7. If Changes Are Requested
+
+Make the changes on your branch, then:
+
+```sh
+git add .
+git commit -m "Address review feedback"
+git push origin your-name/feature-name
+```
+
+The PR updates automatically, no need to open a new one.

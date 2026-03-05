@@ -1,0 +1,77 @@
+---
+title: The Contribution Workflow
+description: The 8-step process for making and submitting changes to the game.
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+Every time you want to add or change something in the game, follow these steps. This is the standard workflow used by professional and indie developers worldwide. Once you know it, it becomes second nature.
+
+<Aside type="note">
+  This page is to understand the *why* behind each step. For the *how*, check out [Git Commands](/git/commands/) for the exact terminal commands to type.
+</Aside>
+
+<Steps>
+
+1. ## Pull the Latest Changes
+
+   Before you start making changes, always download the latest version of the project. Other people may have made changes since you last worked on it, and you want to always build on top of the most current version.
+
+2. ## Create a Branch
+
+   Make a personal branch, or copy, of the project to work in. This keeps your changes completely separate from everyone else's until they're reviewed and ready to be merged.
+
+   Name your branch something descriptive to the changes, like `alex/add-jump-sound` or `sam/fix-wall-collision`. Using your name as a prefix makes it easy for club leaders to see whose branch is whose.
+
+3. ## Make Your Changes
+
+   Write your code, add your assets, fix your bug, whatever you're working on. You can work as you normally would, nothing you do here affects anyone else until you choose to.
+
+4. ## Commit Your Work
+
+   Once you've hit a good stopping point, take a snapshot of your changes with a **commit**. A commit is a saved checkpoint in your code with a message describing what you changed.
+
+   Try to commit often rather than saving everything as one giant commit at the end. Small, focused commits are much easier to review.
+
+   **Good commit messages:**
+   - `Add walking sound effect to player controller`
+   - `Fix player clipping through thin walls`
+   - `Increase NPC interaction range`
+
+   **Bad commit messages:**
+   - `stuff`
+   - `changed things`
+   - `asdfjkl`
+
+5. ## Push to GitHub
+
+   Upload your branch to GitHub so it exists online and others can see it. Nothing has been added to the main game yet, this just makes your branch visible on GitHub to the other club members.
+
+6. ## Open a Pull Request
+
+   On the main project's GitHub page, formally request for your changes to be reviewed and added to the main game. You'll write a short title and description explaining what you made and why.
+
+   A good PR description answers:
+   - What did you add or change?
+   - Why does the game need this?
+   - Is there anything the reviewer should pay attention to?
+
+7. ## Wait for Review
+
+   A club president will look at your PR. They might:
+   - **Approve it** - great, you're almost done!
+   - **Request changes** - they'll leave comments explaining what to tweak. This is completely normal and not a criticism of your work, it's just how collaborative development works.
+
+   If changes are requested, make them on your branch and push a commit. The PR will update automatically.
+
+8. ## Get Merged!
+
+   Once approved, your contribution gets merged into the main game. Your work is now part of the project for everyone.
+
+</Steps>
+
+<Aside type="note" title="You won't break anything">
+  Because you're always working on your own branch, there's no way to accidentally mess up the main game. The worst that can happen is your PR gets rejected, and even then, your work isn't lost.
+</Aside>
+
+---

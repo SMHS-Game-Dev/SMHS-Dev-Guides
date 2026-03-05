@@ -1,0 +1,72 @@
+---
+title: One-Time Setup
+description: Install Git, create a GitHub account, and clone the project. You only need to do this once.
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+You only need to do this once. After this, contributing will be much easier!
+
+<Steps>
+
+1. ## Install Git
+
+   Download and install Git from **[git-scm.com/install](https://git-scm.com/install)**
+
+   - **Windows** - Download the installer and run it. Click "Next" through everything, the defaults are fine.
+   - **Mac** - Open Terminal and run: `xcode-select --install`
+   - **Linux** - Open Terminal and run: `sudo apt install git` (debian based) or look into options in your distro's package manager.
+
+   To confirm it downloaded, open a terminal and run:
+   ```sh
+   git --version
+   ```
+   You should see something like `git version 2.x.x`.
+
+2. ## Create a GitHub Account
+
+   Go to **[github.com](https://github.com)** and **Sign Up**.
+
+   - Use any email you have access to
+   - Pick a username you're happy with — it'll be visible to other club members
+   - The free plan is all you need
+
+   Once you're signed up, **send your GitHub username to a club president** so they can add you to the club's GitHub organization.
+
+3. ## Configure Git on Your Computer
+
+   Open a terminal and run these two commands, replacing the examples with your own info:
+
+   ```sh
+   git config --global user.name "Your Name"
+   git config --global user.email "your@email.com"
+   ```
+
+   Use the same username and email you signed up to GitHub with.
+
+4. ## Accept Your Invitation
+
+   Once a club president adds you to the organization, you'll get an email invitation from GitHub. Click **Accept invitation** to join the organization and gain access to the private repos.
+
+5. ## Clone the Repository
+
+   "Cloning" means downloading the project to your computer so you can make changes to it.
+
+   You can find the repository URL from the organization's page. Then run:
+
+   ```sh
+   # Clones the project to a folder with the same name as the repo
+   git clone https://github.com/[club-org]/[repo-name].git
+
+   # Moves your terminal's working directory to that
+   # of the folder just made, so your commands affect it.
+   cd [repo-name]
+   ```
+
+   You now have the full project on your computer!
+
+</Steps>
+
+<Aside type="tip" title="Finished?">
+  You're now ready to start contributing! Head over to [The Contribution Workflow](/git/workflow/) to learn how the process works, then [Git Commands](/git/commands/) for exactly what to type.
+</Aside>

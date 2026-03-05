@@ -1,0 +1,79 @@
+---
+title: What is Git & GitHub?
+description: A plain-English explanation of Git and GitHub, and everything you need to know before getting started.
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+:::tip[Looking for the Godot Guides?]
+You can find the Godot guides by clicking **Godot** at the top of the left sidebar, or [heading back to the homepage](/).
+:::
+
+Welcome to the SMHS Game Development Club's Git and GitHub guide!
+
+This guide will teach you everything you need to know contribute to our projects from home, even if you've never used Git before. Read each page through, and don't hesitate to ask in our discord server if anything is confusing.
+
+## What's in this guide
+
+<CardGrid>
+  <LinkCard title="One Time Setup" href="/git/setup/" description="Install Git, create a GitHub account, and clone a project." />
+  <LinkCard title="The Contribution Workflow" href="/git/workflow/" description="The 8 step process for making and submitting changes to a project." />
+  <LinkCard title="Git Commands" href="/git/commands/" description="The exact terminal commands you'll need for each part." />
+  <LinkCard title="Common Problems" href="/git/troubleshooting/" description="Stuck? Here's how to fix the most common issues with git." />
+  <LinkCard title="Cheat Sheet" href="/git/cheatsheet/" description="A quick reference of the most useful Git commands." />
+</CardGrid>
+
+---
+
+## Git
+
+**Git** is a program you'll install on your computer that tracks changes to your code over time.
+
+It's essentially a powerful "undo history" for an entire project. You can:
+- Save snapshots of your code (called **commits**)
+- Go back in time to any previous commit
+- Work on experimental features without breaking anything
+- See exactly what changed between any two versions
+
+Git works entirely on your own computer, it doesn't need the internet.
+
+## GitHub
+
+**GitHub** is a website that stores your Git project online so the whole club can access it.
+
+It has extra features for:
+- Reviewing each other's contributions before they get put into the game
+- Discussing and leaving feedback on changes
+- Managing who has access to a project
+
+Git is basically your local notebook and GitHub is the shared whiteboard the whole club writes on.
+
+## Branches
+
+A **branch** is a personal copy of the project where you can make changes safely, without affecting anyone else's work.
+
+When you're done with your changes, you open a **Pull Request (PR)**, essentially saying:
+
+> "Hey, I made something. Can we add it to the main game?"
+
+A club president reviews the PR, gives feedback or approves it, and then **merges** it into the main project.
+
+```
+Main Branch       ──────●──────────────────●──────▶
+                         \                /
+Your Branch               ●──●──●──●──●──●
+                           (your changes)
+```
+
+This workflow keeps the main game stable and gives everyone a chance to review changes before they get added.
+
+## Why not just share files over something like Discord?
+
+- **No history** - If something breaks, you can't easily view what changed.
+- **Conflicts** - If two people edit the same file, one person's work gets overwritten.
+- **No review** - Anyone can break anything at any time, with no one to spot it.
+- **Chaos** - It falls apart fast once more than 2 people are working.
+
+Git solves all of these issues. It's used by pretty much every professional game studio and software company in the world, and it'll be very important for our uses too.
+
+---

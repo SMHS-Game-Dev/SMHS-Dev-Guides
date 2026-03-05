@@ -1,0 +1,54 @@
+---
+title: SMHS Game Dev Club
+description: 'Guides for club members about Git & GitHub, Godot, and more.'
+template: splash
+hero:
+  image:
+    file: ../../assets/logo.png
+  tagline: Guide for everything to help with the game.
+  actions:
+    - text: Git / GitHub Guide
+      link: /git/what-is-git/
+      icon: right-arrow
+      variant: primary
+    - text: Godot Guide
+      link: /godot/introduction/
+      icon: rocket
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Sections
+
+<CardGrid>
+  <Card title="Git and GitHub" icon="github">
+    Learn how to contribute to the game project from home using branches and pull requests.
+
+    [Get started →](/git/what-is-git/)
+  </Card>
+  <Card title="Godot" icon="laptop">
+    Learn the Godot game engine: including scenes, nodes, scripting, and more.
+
+    [Get started →](/godot/introduction/)
+  </Card>
+</CardGrid>
+
+## Git & GitHub
+
+<CardGrid>
+  <LinkCard title="What is Git & GitHub?" href="/git/what-is-git/" description="Start here, an easy to understand explainer of the core ideas of Git." />
+  <LinkCard title="One-Time Setup" href="/git/setup/" description="Install Git, create a GitHub account, and clone a project." />
+  <LinkCard title="The Contribution Workflow" href="/git/workflow/" description="The 8 step process for making and submitting changes." />
+  <LinkCard title="The Commands" href="/git/commands/" description="The exact terminal commands to type for each step." />
+  <LinkCard title="Common Problems" href="/git/troubleshooting/" description="Stuck? Here's how to fix the most common issues with Git." />
+  <LinkCard title="Cheat Sheet" href="/git/cheatsheet/" description="A quick reference of the most useful Git commands." />
+</CardGrid>
+
+## Godot
+
+<CardGrid>
+  <LinkCard title="Introduction to Godot" href="/godot/introduction/" description="What Godot is, why we use it, and how to set it up." />
+  <LinkCard title="Your First Scene" href="/godot/first-scene/" description="Learn how scenes and nodes work." />
+  <LinkCard title="Scripting Basics" href="/godot/scripting-basics/" description="An intro to GDScript, Godot's built-in language." />
+</CardGrid>
