@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dev-docs-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - smhs-devdocs-stage.ripples.gay
+      secretName: dev-docs-staging-tls
+  rules:
+    - host: smhs-devdocs-stage.ripples.gay
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: dev-docs-svc
+                port:
+                  number: 8080

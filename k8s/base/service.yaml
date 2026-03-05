@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dev-docs-svc
+spec:
+  selector:
+    app: dev-docs
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

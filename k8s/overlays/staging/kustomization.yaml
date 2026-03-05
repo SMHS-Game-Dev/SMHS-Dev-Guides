@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: smhs-infra-stage
+resources:
+  - namespace.yaml
+  - ../../base
+  - ingress.yaml
+patches:
+  # this patch isn't *really* required (it defaults to 1),
+  # but i find it better to make sure replicas are
+  # actually patched in staging
+  - path: patch-deployment-replicas.yaml
